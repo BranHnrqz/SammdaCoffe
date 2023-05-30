@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SammdasCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="ingredientID" />
+    </Key>
+    <Property Name="ingredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ingredientName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryID" Type="int" />
+    <Property Name="productName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="detailID" />
+    </Key>
+    <Property Name="detailID" Type="int" Nullable="false" />
+    <Property Name="productID" Type="int" />
+    <Property Name="size" Type="varchar" MaxLength="50" />
+    <Property Name="productPrice" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="descriptionProduct" Type="varchar" MaxLength="465" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="recipeId" />
+    </Key>
+    <Property Name="recipeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ingredientID" Type="int" />
+    <Property Name="productID" Type="int" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="rolID" />
+    </Key>
+    <Property Name="rolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="255" />
+    <Property Name="userMail" Type="varchar" MaxLength="255" />
+    <Property Name="userPassword" Type="varchar" MaxLength="255" />
+    <Property Name="rolID" Type="int" />
+  </EntityType>
+  <Association Name="FK__Product__categor__398D8EEE">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductDe__produ__4222D4EF">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Recipe__ingredie__3E52440B">
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredient">
+        <PropertyRef Name="ingredientID" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="ingredientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Recipe__productI__3F466844">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserType__rolID__46E78A0C">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="rolID" />
+      </Principal>
+      <Dependent Role="UserType">
+        <PropertyRef Name="rolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SammdasCoffeeModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Product__categor__398D8EEE" Association="Self.FK__Product__categor__398D8EEE">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductDe__produ__4222D4EF" Association="Self.FK__ProductDe__produ__4222D4EF">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Recipe__ingredie__3E52440B" Association="Self.FK__Recipe__ingredie__3E52440B">
+      <End Role="Ingredient" EntitySet="Ingredient" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Recipe__productI__3F466844" Association="Self.FK__Recipe__productI__3F466844">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserType__rolID__46E78A0C" Association="Self.FK__UserType__rolID__46E78A0C">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="UserType" EntitySet="UserType" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

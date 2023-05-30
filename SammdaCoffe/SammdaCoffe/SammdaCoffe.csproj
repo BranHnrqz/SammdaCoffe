@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,9 +129,55 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\RolsController.cs" />
+    <Compile Include="Controllers\UserTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ingredient.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductDetail.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recipe.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rol.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SammdaCoffee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SammdaCoffee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SammdaCoffee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SammdaCoffee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SammdaCoffee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserType.cs">
+      <DependentUpon>SammdaCoffee.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,6 +214,16 @@
     <Content Include="img\nosotros.jpg" />
     <Content Include="img\Prueba.png" />
     <Content Include="js\modernizr.js" />
+    <Content Include="Models\SammdaCoffee.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SammdaCoffee.Context.cs</LastGenOutput>
+      <DependentUpon>SammdaCoffee.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SammdaCoffee.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SammdaCoffee.edmx</DependentUpon>
+      <LastGenOutput>SammdaCoffee.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -169,6 +234,13 @@
     <Content Include="img\blog1.webp" />
     <Content Include="img\blog2.webp" />
     <Content Include="img\blog3.webp" />
+    <EntityDeploy Include="Models\SammdaCoffee.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SammdaCoffee.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SammdaCoffee.edmx.diagram">
+      <DependentUpon>SammdaCoffee.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -191,15 +263,46 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home2\About.cshtml" />
-    <Content Include="Views\Home2\Contact.cshtml" />
-    <Content Include="Views\Home2\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\ProductDetails\Create.cshtml" />
+    <Content Include="Views\ProductDetails\Delete.cshtml" />
+    <Content Include="Views\ProductDetails\Details.cshtml" />
+    <Content Include="Views\ProductDetails\Edit.cshtml" />
+    <Content Include="Views\ProductDetails\Index.cshtml" />
+    <Content Include="Views\Ingredients\Create.cshtml" />
+    <Content Include="Views\Ingredients\Delete.cshtml" />
+    <Content Include="Views\Ingredients\Details.cshtml" />
+    <Content Include="Views\Ingredients\Edit.cshtml" />
+    <Content Include="Views\Ingredients\Index.cshtml" />
+    <Content Include="Views\Recipes\Create.cshtml" />
+    <Content Include="Views\Recipes\Delete.cshtml" />
+    <Content Include="Views\Recipes\Details.cshtml" />
+    <Content Include="Views\Recipes\Edit.cshtml" />
+    <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Rols\Create.cshtml" />
+    <Content Include="Views\Rols\Delete.cshtml" />
+    <Content Include="Views\Rols\Details.cshtml" />
+    <Content Include="Views\Rols\Edit.cshtml" />
+    <Content Include="Views\Rols\Index.cshtml" />
+    <Content Include="Views\UserTypes\Create.cshtml" />
+    <Content Include="Views\UserTypes\Delete.cshtml" />
+    <Content Include="Views\UserTypes\Details.cshtml" />
+    <Content Include="Views\UserTypes\Edit.cshtml" />
+    <Content Include="Views\UserTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="blogdecafe_inicio\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -227,6 +330,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -261,7 +367,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

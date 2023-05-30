@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81d97523be1e4983842c1cd923e15ebc" Name="Diagram1">
+        <EntityTypeShape EntityType="SammdasCoffeeModel.Category" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.Ingredient" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.Product" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.ProductDetail" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.Recipe" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.Rol" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SammdasCoffeeModel.UserType" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="SammdasCoffeeModel.FK__Product__categor__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="SammdasCoffeeModel.FK__Recipe__ingredie__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SammdasCoffeeModel.FK__ProductDe__produ__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="SammdasCoffeeModel.FK__Recipe__productI__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="SammdasCoffeeModel.FK__UserType__rolID__46E78A0C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
