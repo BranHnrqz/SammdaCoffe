@@ -21,16 +21,23 @@ CREATE TABLE Ingredient (
   ingredientName VARCHAR(255)
 );
 
+-- Tabla Recipe
+CREATE TABLE Recipe (
+  recipeId INT PRIMARY KEY identity(1,1),
+  ingredientID INT,
+  productID INT,
+  FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID),
+  FOREIGN KEY (productID) REFERENCES Product(productID)
+);
+
 -- Tabla ProductDetail
 CREATE TABLE ProductDetail (
   detailID INT PRIMARY KEY,
   productID INT,
-  ingredientID INT,
   size VARCHAR(50),
   productPrice DECIMAL(10, 2),
   descriptionProduct VARCHAR(465),
   FOREIGN KEY (productID) REFERENCES Product(productID),
-  FOREIGN KEY (ingredientID) REFERENCES Ingredient(ingredientID)
 );
 
 
@@ -49,4 +56,3 @@ CREATE TABLE UserType (
   rolID INT,
   FOREIGN KEY (rolID) REFERENCES Rol(rolID)
 );
-
