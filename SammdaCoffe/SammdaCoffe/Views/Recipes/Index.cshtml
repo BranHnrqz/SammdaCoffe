@@ -4,36 +4,44 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<center>
+    <h2>Recetas</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredient.ingredientName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.productName)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table" border="1" bgcolor=#F9EBEA>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredient.ingredientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.productName)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ingredient.ingredientName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.productName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.recipeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.recipeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recipeId })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ingredient.ingredientName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.productName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.recipeId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.recipeId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.recipeId })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    <p>
+        @Html.ActionLink("Regresar", "Menu", "Home")
+    </p>
+</center>

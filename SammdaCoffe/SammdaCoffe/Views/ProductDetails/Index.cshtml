@@ -4,48 +4,56 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <h2>Detalles Productos</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.productPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descriptionProduct)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.productName)
-        </th>
-        <th></th>
-    </tr>
+<Center>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table" border="1" bgcolor=#F9EBEA>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.productPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descriptionProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.productName)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.size)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.productPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descriptionProduct)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.productName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.detailID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.detailID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.detailID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.productPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descriptionProduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.productName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.detailID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.detailID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.detailID })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    <p>
+        @Html.ActionLink("Regresar", "Menu", "Home")
+    </p>
+</Center>
