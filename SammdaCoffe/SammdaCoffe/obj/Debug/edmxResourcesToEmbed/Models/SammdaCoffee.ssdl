@@ -21,6 +21,7 @@
     <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="categoryID" Type="int" />
     <Property Name="productName" Type="varchar" MaxLength="255" />
+    <Property Name="state" Type="varchar" MaxLength="15" />
   </EntityType>
   <EntityType Name="ProductDetail">
     <Key>
@@ -39,6 +40,7 @@
     <Property Name="recipeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ingredientID" Type="int" />
     <Property Name="productID" Type="int" />
+    <Property Name="quantity" Type="varchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>

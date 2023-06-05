@@ -17,6 +17,7 @@ namespace SammdaCoffe.Models
         public int recipeId { get; set; }
         public Nullable<int> ingredientID { get; set; }
         public Nullable<int> productID { get; set; }
+        public string quantity { get; set; }
     
         public virtual Ingredient Ingredient { get; set; }
         public virtual Product Product { get; set; }

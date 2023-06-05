@@ -20,6 +20,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="SammdasCoffeeModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="state" ColumnName="state" />
           <ScalarProperty Name="productID" ColumnName="productID" />
           <ScalarProperty Name="categoryID" ColumnName="categoryID" />
           <ScalarProperty Name="productName" ColumnName="productName" />
@@ -40,6 +41,7 @@
     <EntitySetMapping Name="Recipe">
       <EntityTypeMapping TypeName="SammdasCoffeeModel.Recipe">
         <MappingFragment StoreEntitySet="Recipe">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="recipeId" ColumnName="recipeId" />
           <ScalarProperty Name="ingredientID" ColumnName="ingredientID" />
           <ScalarProperty Name="productID" ColumnName="productID" />

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SammdaCoffe.Models.Recipe>
+
+@{
+    ViewBag.Title = "ListRecipes";
+}
+
+<table class="table" border="1" bgcolor=#F9EBEA>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredient.ingredientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.productName)
+        </th>
+        <th>
+            Acciones
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredient.ingredientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.productName)
+            </td>
+        </tr>
+    }
+</table>

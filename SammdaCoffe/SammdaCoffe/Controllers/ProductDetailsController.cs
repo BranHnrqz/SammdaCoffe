@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using SammdaCoffe.Models;
@@ -19,6 +20,27 @@ namespace SammdaCoffe.Controllers
         {
             var productDetail = db.ProductDetail.Include(p => p.Product);
             return View(productDetail.ToList());
+        }
+        
+        //GET: Listar ProductDetails
+        public async Task<ActionResult> ListDProducts()
+        {
+            try
+            {
+                var query = string.Format("Select Product.productName, Product.productID, ProductDetail.size, ProductDetail.productPrice, ProductDetail.descriptionProduct, ProductDetail.detailID, ProductDetail.productID from ProductDetail inner join Product on ProductDetail.productID = Product.productID");
+                var product = db.ProductDetail.SqlQuery(query);
+
+                if (product == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(model: await product.ToListAsync());
+            }
+
+            catch (Exception ex)
+            {
+                return View(ex.Message);
+            }
         }
 
         // GET: ProductDetails/Details/5

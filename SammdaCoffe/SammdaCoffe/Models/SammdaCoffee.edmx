@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SammdasCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SammdasCoffeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="categoryID" />
@@ -26,6 +26,7 @@
           <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="categoryID" Type="int" />
           <Property Name="productName" Type="varchar" MaxLength="255" />
+          <Property Name="state" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="ProductDetail">
           <Key>
@@ -44,6 +45,7 @@
           <Property Name="recipeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ingredientID" Type="int" />
           <Property Name="productID" Type="int" />
+          <Property Name="quantity" Type="varchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -162,8 +164,7 @@
             <End Role="UserType" EntitySet="UserType" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SammdasCoffeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -193,6 +194,7 @@
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__categor__398D8EEE" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ProductDetail" Relationship="Self.FK__ProductDe__produ__4222D4EF" FromRole="Product" ToRole="ProductDetail" />
           <NavigationProperty Name="Recipe" Relationship="Self.FK__Recipe__productI__3F466844" FromRole="Product" ToRole="Recipe" />
+          <Property Name="state" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ProductDetail">
           <Key>
@@ -214,6 +216,7 @@
           <Property Name="productID" Type="Int32" />
           <NavigationProperty Name="Ingredient" Relationship="Self.FK__Recipe__ingredie__3E52440B" FromRole="Recipe" ToRole="Ingredient" />
           <NavigationProperty Name="Product" Relationship="Self.FK__Recipe__productI__3F466844" FromRole="Recipe" ToRole="Product" />
+          <Property Name="quantity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -359,6 +362,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="SammdasCoffeeModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="categoryID" ColumnName="categoryID" />
                 <ScalarProperty Name="productName" ColumnName="productName" />
@@ -379,6 +383,7 @@
           <EntitySetMapping Name="Recipe">
             <EntityTypeMapping TypeName="SammdasCoffeeModel.Recipe">
               <MappingFragment StoreEntitySet="Recipe">
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="recipeId" ColumnName="recipeId" />
                 <ScalarProperty Name="ingredientID" ColumnName="ingredientID" />
                 <ScalarProperty Name="productID" ColumnName="productID" />

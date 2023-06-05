@@ -24,6 +24,7 @@ namespace SammdaCoffe.Models
         public int productID { get; set; }
         public Nullable<int> categoryID { get; set; }
         public string productName { get; set; }
+        public string state { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

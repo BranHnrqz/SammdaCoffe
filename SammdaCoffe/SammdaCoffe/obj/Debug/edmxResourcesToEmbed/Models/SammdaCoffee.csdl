@@ -26,6 +26,7 @@
     <NavigationProperty Name="Category" Relationship="Self.FK__Product__categor__398D8EEE" FromRole="Product" ToRole="Category" />
     <NavigationProperty Name="ProductDetail" Relationship="Self.FK__ProductDe__produ__4222D4EF" FromRole="Product" ToRole="ProductDetail" />
     <NavigationProperty Name="Recipe" Relationship="Self.FK__Recipe__productI__3F466844" FromRole="Product" ToRole="Recipe" />
+    <Property Name="state" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ProductDetail">
     <Key>
@@ -47,6 +48,7 @@
     <Property Name="productID" Type="Int32" />
     <NavigationProperty Name="Ingredient" Relationship="Self.FK__Recipe__ingredie__3E52440B" FromRole="Recipe" ToRole="Ingredient" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Recipe__productI__3F466844" FromRole="Recipe" ToRole="Product" />
+    <Property Name="quantity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
