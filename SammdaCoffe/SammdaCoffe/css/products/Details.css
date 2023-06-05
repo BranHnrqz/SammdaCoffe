@@ -1,0 +1,47 @@
+﻿.container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+h4 {
+    margin-top: 0;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.dl-horizontal dt {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.dl-horizontal dd {
+    margin-left: 120px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.edit-link,
+.back-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+    .edit-link:hover,
+    .back-link:hover {
+        background-color: #45a049;
+    }

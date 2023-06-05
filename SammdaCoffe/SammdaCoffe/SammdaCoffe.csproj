@@ -199,6 +199,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="css\normalize.css" />
+    <Content Include="css\products\Create.css" />
+    <Content Include="css\products\Delete.css" />
+    <Content Include="css\products\Details.css" />
+    <Content Include="css\products\index.css" />
     <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -214,6 +218,7 @@
     <Content Include="img\nosotros.jpg" />
     <Content Include="img\Prueba.png" />
     <Content Include="js\modernizr.js" />
+    <Content Include="js\Products.js" />
     <Content Include="Models\SammdaCoffee.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SammdaCoffee.Context.cs</LastGenOutput>

@@ -3,32 +3,24 @@
 @{
     ViewBag.Title = "Details";
 }
-
+<link href="~/css/products/Details.css" rel="stylesheet" />
 <h2>Details</h2>
 
-<div>
+
+<div class="container">
     <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.productName)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.productName)</dt>
+        <dd>@Html.DisplayFor(model => model.productName)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.productName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.categoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.categoryName)
-        </dd>
-
+        <dt>@Html.DisplayNameFor(model => model.Category.categoryName)</dt>
+        <dd>@Html.DisplayFor(model => model.Category.categoryName)</dd>
     </dl>
+
+    <div class="button-group">
+        <a href="@Url.Action("Edit", new { id = Model.productID })" class="edit-link">Edit</a>
+        <span>|</span>
+        <a href="@Url.Action("Index")" class="back-link">Back to List</a>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.productID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

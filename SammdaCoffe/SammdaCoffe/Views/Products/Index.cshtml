@@ -3,44 +3,36 @@
 @{
     ViewBag.Title = "Index";
 }
-<center>
-    <h2>Prodcutos</h2>
+<link href="~/css/products/index.css" rel="stylesheet" />
+<div class="container">
+    <h2>Productos</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href="@Url.Action("Create")" class="action-link">Create New</a>
     </p>
-    <table class="table" border="1" bgcolor=#F9EBEA>
+
+    <table>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.productName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category.categoryName)
-            </th>
-            <th>
-                Acciones
-            </th>
+            <th>@Html.DisplayNameFor(model => model.productName)</th>
+            <th>@Html.DisplayNameFor(model => model.Category.categoryName)</th>
+            <th>Acciones</th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.productName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Category.categoryName)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.productName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.categoryName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.productID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.productID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.productID })
+                    <a href="@Url.Action("Edit", new { id = item.productID })" class="action-link">Edit</a>
+                    <a href="@Url.Action("Details", new { id = item.productID })" class="action-link">Details</a>
+                    <a href="@Url.Action("Delete", new { id = item.productID })" class="action-link">Delete</a>
                 </td>
             </tr>
         }
-
     </table>
+
     <p>
-        @Html.ActionLink("Regresar", "Menu", "Home")
+        <a href="@Url.Action("Menu", "Home")" class="back-link">Regresar</a>
     </p>
-</center>
+</div>
