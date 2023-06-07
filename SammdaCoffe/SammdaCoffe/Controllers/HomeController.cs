@@ -10,7 +10,7 @@ namespace SammdaCoffe.Controllers
     {
         public ActionResult Index()
         {
-
+            Response.Redirect("~/ProductDetails/ListdProducts");
             return View();
         }
 
@@ -20,6 +20,8 @@ namespace SammdaCoffe.Controllers
             Response.Redirect("~/ProductDetails/ListdProducts");
             return View();
         }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
