@@ -34,8 +34,11 @@
                     <a class="logo" href="@Url.Action("ListDProducts")">
                         <h1 class="logo__nombre no-margin center-texto">Sammda<samp class="logo__bold">Coffee</samp></h1>
                     </a>
-                    <a class="nav-link" href="@Url.Action("Login")">
+                    <a id="sesion" class="nav-link" href="@Url.Action("Login")" style="display:none;">
                         <h1 class="navegacion__enlace no-margin center-texto">Iniciar sesión</h1>
+                    </a>
+                    <a id="salir" class="nav-link" href="@Url.Action("ListDProducts", "ProductDetails")" style="display:block;">
+                        <h1 class="navegacion__enlace no-margin center-texto">Salir</h1>
                     </a>
                 </div>
             </div>

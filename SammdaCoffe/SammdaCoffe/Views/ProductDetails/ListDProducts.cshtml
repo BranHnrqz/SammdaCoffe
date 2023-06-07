@@ -11,6 +11,11 @@
 {
     <article>
 
+        <script>
+            document.getElementById("sesion").style.display = "block";
+            document.getElementById("salir").style.display = "none";
+        </script>
+
         @Html.DisplayNameFor(model => model.Product.productName)
         @Html.DisplayFor(modelItem => item.Product.productName)<br />
 

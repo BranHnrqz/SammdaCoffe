@@ -7,8 +7,10 @@
 
 @using (Html.BeginForm("login", "Login", FormMethod.Post))
 {
+    <script>
+        document.getElementById("salir").style.display = "none";
+    </script>
 
-   
     <div class="container_lg">
         <div class="form-body">
             <form  class="form-login" action="~/Views/Home/Menu.cshtml" method="post">
@@ -21,7 +23,7 @@
             </form>
         </div>
     </div>
-    
+
 
 
 
