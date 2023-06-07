@@ -21,7 +21,13 @@ namespace SammdaCoffe.Controllers
             var productDetail = db.ProductDetail.Include(p => p.Product);
             return View(productDetail.ToList());
         }
-        
+
+        public ActionResult Login()
+        {
+            Response.Redirect("~/Login/login");
+            return View();
+        }
+
         //GET: Listar ProductDetails
         public async Task<ActionResult> ListDProducts()
         {

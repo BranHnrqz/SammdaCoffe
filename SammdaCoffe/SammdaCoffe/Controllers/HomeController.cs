@@ -10,8 +10,17 @@ namespace SammdaCoffe.Controllers
     {
         public ActionResult Index()
         {
+            Response.Redirect("~/ProductDetails/ListdProducts");
             return View();
         }
+
+
+        public ActionResult ListDProducts()
+        {
+            Response.Redirect("~/ProductDetails/ListdProducts");
+            return View();
+        }
+
 
         public ActionResult About()
         {

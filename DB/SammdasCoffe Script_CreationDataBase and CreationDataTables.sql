@@ -59,4 +59,4 @@ CREATE TABLE UserType (
 
 alter table Product add "state" varchar(15)
 
-alter table Category add quantity varchar(25)
+alter table Recipe add quantity varchar(25)

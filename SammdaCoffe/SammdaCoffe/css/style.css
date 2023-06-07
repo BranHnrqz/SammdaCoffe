@@ -16,6 +16,16 @@ html {
 *, *:before, *:after{
     box-sizing: inherit;
 }
+
+nav {
+    height: 12.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--negro);
+}
+
 body {
     font-family: var(--fuenteParrafo);
     font-size: 1.6rem;
@@ -186,7 +196,7 @@ img{
 }
 .footer{
     background-color: var(--negro);
-    padding: 3rem 0;
+    padding: 3.5rem 0;
     margin-top: 4rem;
 }
 /*para la parte sobre nosotros*/
