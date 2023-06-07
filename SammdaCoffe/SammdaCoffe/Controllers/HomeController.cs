@@ -10,9 +10,16 @@ namespace SammdaCoffe.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 
+
+        public ActionResult ListDProducts()
+        {
+            Response.Redirect("~/ProductDetails/ListdProducts");
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
