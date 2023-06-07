@@ -204,6 +204,7 @@
     <Content Include="css\tables\Details.css" />
     <Content Include="css\tables\index.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\tables\PrCrea.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -277,7 +278,6 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\ProductDetails\Create.cshtml" />
     <Content Include="Views\ProductDetails\Delete.cshtml" />
@@ -307,6 +307,7 @@
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\ProductDetails\ListDProducts.cshtml" />
     <Content Include="Views\Recipes\ListRecipes.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

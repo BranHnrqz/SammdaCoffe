@@ -3,45 +3,30 @@
 @{
     ViewBag.Title = "Delete";
 }
-
+<link href="~/css/tables/Delete.css" rel="stylesheet" />
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
+<div >
     <h4>ProductDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.size)
-        </dt>
-
-        <dd>
+            @Html.DisplayNameFor(model => model.size):
             @Html.DisplayFor(model => model.size)
-        </dd>
-
+        </dt>
+        
         <dt>
-            @Html.DisplayNameFor(model => model.productPrice)
+            @Html.DisplayNameFor(model => model.productPrice): @Html.DisplayFor(model => model.productPrice)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.productPrice)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.descriptionProduct)
+            @Html.DisplayNameFor(model => model.descriptionProduct):  @Html.DisplayFor(model => model.descriptionProduct)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.productName):  @Html.DisplayFor(model => model.Product.productName)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.descriptionProduct)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Product.productName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product.productName)
-        </dd>
 
     </dl>
 
@@ -50,7 +35,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <a href="@Url.Action("Index")" class="back-link">Back to List</a>
         </div>
     }
 </div>
