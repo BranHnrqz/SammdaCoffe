@@ -1,54 +1,69 @@
-﻿
-.container_lg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(120deg, rgb(156, 106, 73));
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container_lg {
+    width: 550px;
+    max-width: 500px;
+    margin: 200px auto;
 }
 
 .form-body {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    height: 230px;
+    margin: auto;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 1s;
+    background-color: #ffffff2f;
 }
 
-.form-login {
-    max-width: 300px;
-    margin: 0 auto;
+    .form-body:hover {
+        transform: scale(1.1);
+    }
+
+.form-login input {
+    color: rgb(0, 0, 0);
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 40px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline-color: #000000;
+    border: 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
 }
 
 .text {
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: rgb(255, 255, 255);
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button.btn {
+.btn {
+    width: 80%;
+    margin: auto;
     display: block;
-    width: 100%;
-    padding: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    background: transparent;
     border: none;
-    background-color: #4CAF50;
+    border-radius: 5px;
+    background-color: rgb(136, 93, 64);
     color: #fff;
-    font-size: 16px;
     font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
+    box-shadow: 1px 1px 5px rgb(104, 71, 48);
 }
-
-    button.btn:hover {
-        background-color: #45a049;
-    }

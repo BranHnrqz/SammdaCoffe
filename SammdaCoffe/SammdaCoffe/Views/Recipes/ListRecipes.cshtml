@@ -49,13 +49,17 @@
             }
 </style>
 
+<script>
+            document.getElementById("sesion").style.display = "block";
+            document.getElementById("salir").style.display = "none";
+</script>
+
 <table>
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Ingredient.ingredientName)</th>
             <th>@Html.DisplayNameFor(model => model.Product.productName)</th>
             <th>@Html.DisplayNameFor(model => model.quantity)</th>
-            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -65,10 +69,6 @@
                 <td>@Html.DisplayFor(modelItem => item.Ingredient.ingredientName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Product.productName)</td>
                 <td>@Html.DisplayFor(modelItem => item.quantity)</td>
-                <td class="actions">
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
-                </td>
             </tr>
         }
     </tbody>

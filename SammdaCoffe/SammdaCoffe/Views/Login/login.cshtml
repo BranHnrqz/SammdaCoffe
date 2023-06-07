@@ -7,19 +7,22 @@
 
 @using (Html.BeginForm("login", "Login", FormMethod.Post))
 {
+    <script>
+        document.getElementById("salir").style.display = "none";
+    </script>
 
-   <div class="container_lg">
-       <div class="form-body">
-           <form class="form-login" action="~/Views/Home/Menu.cshtml" method="post">
-               <p class="text">Login</p>
-               <center>
-                   <input type="text" name="user" value="" placeholder="Email" /><br />
-                   <input type="password" name="paswo" value="" placeholder="Contraseña" />
-               </center>
-               <button type="submit" class="btn">Entrar</button>
-           </form>
-       </div>
-   </div>
+    <div class="container_lg">
+        <div class="form-body">
+            <form class="form-login" action="~/Views/Home/Menu.cshtml" method="post">
+                <p class="text">Login</p>
+                <center>
+                    <input type="text" name="user" value="" placeholder="Email" /><br />
+                    <input type="password" name="paswo" value="" placeholder="Contraseña" />
+                </center>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+        </div>
+    </div>
 
 
 

@@ -27,6 +27,7 @@ nav {
 }
 
 body {
+    padding-top: 15rem;
     font-family: var(--fuenteParrafo);
     font-size: 1.6rem;
     line-height: 2;

@@ -68,8 +68,8 @@ dl.dl-horizontal {
 }
 
 .btn-default {
-    color: white;
-    background-color: #ff0000;
+    background-color: rgb(136, 93, 64);
+    color: #fff;
     border-color: #ccc;
 }
 
