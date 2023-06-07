@@ -32,3 +32,58 @@
     .btn:hover {
         background-color: #0056b3;
     }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #F9EBEA;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .actions a {
+        margin: 0 5px;
+        color: #555;
+        text-decoration: none;
+    }
+
+        .actions a:hover {
+            color: #000;
+        }
+
+.action-link {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
