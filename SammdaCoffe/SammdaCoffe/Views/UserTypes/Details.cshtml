@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/css/tables/Details.css" rel="stylesheet" />
 
-<h2>Details</h2>
 
-<div>
+<div class="container1">
+    <h2>Details</h2>
     <h4>UserType</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -43,8 +44,8 @@
         </dd>
 
     </dl>
+    <a href="@Url.Action("Edit", new { id = Model.rolID })" class="d">Edit</a>
+    <span>|</span>
+    <a href="@Url.Action("Index")" class="back-link">Back to List</a>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.userID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

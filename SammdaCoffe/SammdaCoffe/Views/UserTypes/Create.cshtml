@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Create";
 }
-
+<link href="~/css/tables/Create.css" rel="stylesheet" />
 <h2>Create</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="container1">
         <h4>UserType</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -51,9 +51,8 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "back-link" })
+
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
