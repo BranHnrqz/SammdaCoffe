@@ -13,6 +13,9 @@
             @Html.DisplayNameFor(model => model.Product.productName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
             Acciones
         </th>
     </tr>
@@ -25,6 +28,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
             </td>
         </tr>
     }

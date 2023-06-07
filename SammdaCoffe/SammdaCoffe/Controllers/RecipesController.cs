@@ -32,7 +32,7 @@ namespace SammdaCoffe.Controllers
                 {
                     return View("error");
                 }
-                var query = string.Format("Select Ingredient.ingredientName, Product.productName, Recipe.recipeID, Recipe.ingredientID, Recipe.productID from Recipe inner join Ingredient on Recipe.ingredientID = Ingredient.ingredientID inner join Product on Recipe.productID = Product.productID where Recipe.productID = '" + id + "'");
+                var query = string.Format("Select Ingredient.ingredientName, Product.productName, Recipe.recipeID, Recipe.ingredientID, Recipe.productID, Recipe.quantity from Recipe inner join Ingredient on Recipe.ingredientID = Ingredient.ingredientID inner join Product on Recipe.productID = Product.productID where Recipe.productID = '" + id + "'");
                 var recipe = db.Recipe.SqlQuery(query);
 
                 if (recipe == null)
