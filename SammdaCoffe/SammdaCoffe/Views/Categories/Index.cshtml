@@ -3,15 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
+<link href="~/css/tables/index.css" rel="stylesheet" />
 
-<center>
+<div class="container1">
     <h2>Categorias</h2>
 
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href="@Url.Action("Create")" class="action-link">Create New</a>
     </p>
-    <table class="table" border="1" bgcolor=#F9EBEA>
+    <table>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.categoryName)
@@ -28,15 +29,16 @@
                     @Html.DisplayFor(modelItem => item.categoryName)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.categoryID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.categoryID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.categoryID })
+                    <a href="@Url.Action("Edit", new { id = item.categoryID })" class="action-link">Edit</a>
+                    <a href="@Url.Action("Details", new { id = item.categoryID })" class="action-link">Details</a>
+                    <a href="@Url.Action("Delete", new { id = item.categoryID })" class="action-link">Delete</a>
+
                 </td>
             </tr>
         }
 
     </table>
     <p>
-        @Html.ActionLink("Regresar", "Menu", "Home")
+        <a href="@Url.Action("Menu", "Home")" class="back-link">Regresar</a>
     </p>
-</center>
+</div>

@@ -2,15 +2,22 @@
 @{
     ViewBag.Title = "Menu";
 }
-
+<link href="~/css/tables/Details.css" rel="stylesheet" />
+<link href="~/css/tables/Create.css" rel="stylesheet" />
 <h2>Administrar</h2>
+<center>
+    <div class="container1">
+        <ul class="menu-list">
+            <li>@Html.ActionLink("Categorias", "Index", "Categories")</li>
+            <li>@Html.ActionLink("Ingredientes", "Index", "Ingredients")</li>
+            <li>@Html.ActionLink("Detalles productos", "Index", "ProductDetails")</li>
+            <li>@Html.ActionLink("Productos", "Index", "Products")</li>
+            <li>@Html.ActionLink("Recetas", "Index", "Recipes")</li>
+            <li>@Html.ActionLink("Roles", "Index", "Rols")</li>
+            <li>@Html.ActionLink("Usuarios", "Index", "UserTypes")</li>
+        </ul>
 
-<ul>
-    <li>@Html.ActionLink("Categorias", "Index", "Categories")</li>
-    <li>@Html.ActionLink("Ingredientes", "Index", "Ingredients")</li>
-    <li>@Html.ActionLink("Detalles productos", "Index", "ProductDetails")</li>
-    <li>@Html.ActionLink("Productos", "Index", "Products")</li>
-    <li>@Html.ActionLink("Recetas", "Index", "Recipes")</li>
-    <li>@Html.ActionLink("Roles", "Index", "Rols")</li>
-    <li>@Html.ActionLink("Usuarios", "Index", "UserTypes")</li>
-</ul>
+
+    </div>
+
+</center>

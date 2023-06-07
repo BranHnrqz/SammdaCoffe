@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Details";
 }
-<link href="~/css/products/Details.css" rel="stylesheet" />
-<h2>Details</h2>
+<link href="~/css/tables/Details.css" rel="stylesheet" />
 
 
-<div class="container">
+
+<div class="container1">
+    <h2>Details</h2>
     <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -26,8 +27,8 @@
         </dd>
     </dl>
 
-    <div class="button-group">
-        <a href="@Url.Action("Edit", new { id = Model.productID })" class="edit-link">Edit</a>
+    <div class="container1">
+        <a href="@Url.Action("Edit", new { id = Model.productID })" class="d">Edit</a>
         <span>|</span>
         <a href="@Url.Action("Index")" class="back-link">Back to List</a>
     </div>
