@@ -3,25 +3,23 @@
     ViewBag.Title = "login";
 }
 
-<link rel="stylesheet" href="~/css/login.css">
+<link href="~/css/login.css" rel="stylesheet" />
 
 @using (Html.BeginForm("login", "Login", FormMethod.Post))
 {
 
-   
-    <div class="container_lg">
-        <div class="form-body">
-            <form  class="form-login" action="~/Views/Home/Menu.cshtml" method="post">
-                <p class="text">Login</p>
-                <center>
-                    <input type="text" name="user" value="" placeholder="Email" /><br />
-                    <input type="password" name="paswo" value="" placeholder="Contraseña" />
-                </center>
-                <button type="submit" class="btn">Entrar</button>
-            </form>
-        </div>
-    </div>
-    
+   <div class="container_lg">
+       <div class="form-body">
+           <form class="form-login" action="~/Views/Home/Menu.cshtml" method="post">
+               <p class="text">Login</p>
+               <center>
+                   <input type="text" name="user" value="" placeholder="Email" /><br />
+                   <input type="password" name="paswo" value="" placeholder="Contraseña" />
+               </center>
+               <button type="submit" class="btn">Entrar</button>
+           </form>
+       </div>
+   </div>
 
 
 

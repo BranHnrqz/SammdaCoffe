@@ -3,26 +3,18 @@
 @{
     ViewBag.Title = "ListDProducts";
 }
-<link href="~/css/tables/Create.css" rel="stylesheet" />
+<link href="~/css/litscss.css" rel="stylesheet" />
 <h2>Productos</h2>
 
 
 @foreach (var item in Model)
 {
-    <article>
-
-        @Html.DisplayNameFor(model => model.Product.productName)
-        @Html.DisplayFor(modelItem => item.Product.productName)<br />
-
-        @Html.DisplayNameFor(model => model.size)
-        @Html.DisplayFor(modelItem => item.size)<br />
-
-        @Html.DisplayNameFor(model => model.productPrice)
-        @Html.DisplayFor(modelItem => item.productPrice)<br />
-
-        @Html.DisplayNameFor(model => model.descriptionProduct)
-        @Html.DisplayFor(modelItem => item.descriptionProduct)<br />
-
-        @Html.ActionLink("Receta", "../Recipes/ListRecipes", new { id = item.Product.productID, @class = "btn" })
+    <article class="product-item">
+        <h3 class="product-name">@Html.DisplayFor(modelItem => item.Product.productName)</h3>
+        <p class="product-info">Size: <span>@Html.DisplayFor(modelItem => item.size)</span></p>
+        <p class="product-info">Price: <span>@Html.DisplayFor(modelItem => item.productPrice)</span></p>
+        <p class="product-description">@Html.DisplayFor(modelItem => item.descriptionProduct)</p>
+        <a href="../Recipes/ListRecipes/@item.Product.productID" class="btn">Receta</a>
     </article>
+
 }

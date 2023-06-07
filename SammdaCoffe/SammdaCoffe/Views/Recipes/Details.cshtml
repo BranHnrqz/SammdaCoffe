@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/css/tables/Details.css" rel="stylesheet" />
 
-<h2>Details</h2>
 
-<div>
+<div class="container1">
+    <h2>Details</h2>
     <h4>Recipe</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -15,7 +16,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ingredient.ingredientName)
+            : @Html.DisplayFor(model => model.Ingredient.ingredientName)
         </dd>
 
         <dt>
@@ -35,8 +36,10 @@
         </dd>
 
     </dl>
+    <div class="container1">
+        <a href="@Url.Action("Edit", new { id = Model.recipeId })" class="d">Edit</a>
+        <span>|</span>
+        <a href="@Url.Action("Index")" class="back-link">Back to List</a>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.recipeId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

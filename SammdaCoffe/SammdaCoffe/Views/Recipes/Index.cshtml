@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<center>
+<link href="~/css/tables/index.css" rel="stylesheet" />
+<div class=" container1">
     <h2>Recetas</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a href="@Url.Action("Create")" class="action-link">Create New</a>
     </p>
-    <table class="table" border="1" bgcolor=#F9EBEA>
+    <table>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Ingredient.ingredientName)
@@ -39,15 +39,15 @@
                     @Html.DisplayFor(modelItem => item.Product.productName)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.recipeId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.recipeId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.recipeId })
+                    <a href="@Url.Action("Edit", new { id = item.recipeId })" class="action-link">Edit</a>
+                    <a href="@Url.Action("Details", new { id = item.recipeId })" class="action-link">Details</a>
+                    <a href="@Url.Action("Delete", new { id = item.recipeId })" class="action-link">Delete</a>
+                
                 </td>
             </tr>
         }
 
     </table>
     <p>
-        @Html.ActionLink("Regresar", "Menu", "Home")
-    </p>
-</center>
+        <a href="@Url.Action("Menu", "Home")" class="back-link">Regresar</a>    </p>
+</div>

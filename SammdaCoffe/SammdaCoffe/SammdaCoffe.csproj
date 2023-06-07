@@ -199,6 +199,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="css\litscss.css" />
     <Content Include="css\login.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\tables\Create.css" />

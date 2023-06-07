@@ -1,0 +1,34 @@
+﻿.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.product-name {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.product-info {
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.product-description {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
