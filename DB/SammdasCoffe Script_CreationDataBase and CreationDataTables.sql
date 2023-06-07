@@ -56,3 +56,7 @@ CREATE TABLE UserType (
   rolID INT,
   FOREIGN KEY (rolID) REFERENCES Rol(rolID)
 );
+
+alter table Product add "state" varchar(15)
+
+alter table Category add quantity varchar(25)

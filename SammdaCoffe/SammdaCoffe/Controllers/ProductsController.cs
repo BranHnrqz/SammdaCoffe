@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using SammdaCoffe.Models;
@@ -36,19 +37,25 @@ namespace SammdaCoffe.Controllers
             return View(product);
         }
 
+
         // GET: Products/Create
         public ActionResult Create()
         {
+
+            string[] strings = new[] { "Active", "Inactive" };
+            SelectList sl = new SelectList(strings);
+
             ViewBag.categoryID = new SelectList(db.Category, "categoryID", "categoryName");
+            ViewBag.state = sl;
             return View();
         }
 
         // POST: Products/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "productID,categoryID,productName")] Product product)
+        public ActionResult Create([Bind(Include = "productID,categoryID,productName,state")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -78,11 +85,11 @@ namespace SammdaCoffe.Controllers
         }
 
         // POST: Products/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "productID,categoryID,productName")] Product product)
+        public ActionResult Edit([Bind(Include = "productID,categoryID,productName,state")] Product product)
         {
             if (ModelState.IsValid)
             {

@@ -14,6 +14,7 @@
     <table>
         <tr>
             <th>@Html.DisplayNameFor(model => model.productName)</th>
+            <th>@Html.DisplayNameFor(model => model.state)</th>
             <th>@Html.DisplayNameFor(model => model.Category.categoryName)</th>
             <th>Acciones</th>
         </tr>
@@ -22,6 +23,9 @@
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.productName)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
                 <td>@Html.DisplayFor(modelItem => item.Category.categoryName)</td>
                 <td>
                     <a href="@Url.Action("Edit", new { id = item.productID })" class="action-link">Edit</a>

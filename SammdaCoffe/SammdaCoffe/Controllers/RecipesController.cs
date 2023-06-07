@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using SammdaCoffe.Models;
 
 namespace SammdaCoffe.Controllers
@@ -22,7 +24,6 @@ namespace SammdaCoffe.Controllers
             return View(recipe.ToList());
         }
 
-        //GET: Listar Recipes
         public async Task<ActionResult> ListRecipes(int? id)
         {
             try
@@ -45,6 +46,8 @@ namespace SammdaCoffe.Controllers
             {
                 return View(ex.Message);
             }
+            //var recipe = from Recipe in db.Recipe select Recipe;
+
         }
 
         // GET: Recipes/Details/5
@@ -71,11 +74,11 @@ namespace SammdaCoffe.Controllers
         }
 
         // POST: Recipes/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recipeId,ingredientID,productID")] Recipe recipe)
+        public ActionResult Create([Bind(Include = "recipeId,ingredientID,productID,quantity")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
@@ -107,11 +110,11 @@ namespace SammdaCoffe.Controllers
         }
 
         // POST: Recipes/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "recipeId,ingredientID,productID")] Recipe recipe)
+        public ActionResult Edit([Bind(Include = "recipeId,ingredientID,productID,quantity")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
