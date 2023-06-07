@@ -132,6 +132,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
@@ -198,6 +199,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\tables\Create.css" />
     <Content Include="css\tables\Delete.css" />
@@ -308,6 +310,7 @@
     <Content Include="Views\ProductDetails\ListDProducts.cshtml" />
     <Content Include="Views\Recipes\ListRecipes.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Login\login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
